@@ -4,52 +4,35 @@
   padding: 0;
   box-sizing: border-box;
 }
-@media (max-width: 768px) {
-  .sobre {
-      flex-direction: column;
-      text-align: center;
-  }
 
-  .sobre-texto {
-      text-align: center; /* centraliza texto no mobile */
-  }
-
-  .sobre-foto {
-      margin-top: 20px;
-  }
-}
 html, body {
   width: 100%;
   overflow-x: hidden; /* remove rolagem horizontal */
-}
-
-
-body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f3f2f3;
   color: #fff;
   line-height: 1.6;
 }
+
 /* Vídeo em background */
 #bg-video {
-    position: fixed;      /* fica fixo no fundo */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;    /* cobre toda a tela sem distorcer */
-    z-index: -1;          /* fica atrás do conteúdo */
+    object-fit: cover;
+    z-index: -1;
 }
 
 /* ===== HEADER ===== */
 header {
   display: flex;
   width: 100%;
-  max-width: 100vw;  /* força ocupar a tela toda */
-  padding: 15px 20px;
+  max-width: 100vw;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 20px;
   background-color: #521088;
   position: sticky;
   top: 0;
@@ -63,7 +46,8 @@ header h1 {
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 20px;
+  flex-wrap: wrap; /* ajusta no mobile */
 }
 
 .navbar a {
@@ -76,75 +60,72 @@ header h1 {
 .navbar a:hover {
   color: #00e0ff;
 }
-/* Section Sobre */
+
+/* ===== Section Sobre ===== */
 .sobre {
     display: flex;
-    align-items: center;        /* centraliza verticalmente */
-    justify-content: space-between; 
-    gap: 40px;                  /* espaçamento entre texto e foto */
-    padding: 60px 10%;
-    background-color: #430c68;  /* mesmo fundo dos outros sections */
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 10%;
+    background-color: #430c68;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-/* Texto à esquerda */
 .sobre-texto {
     flex: 1;
     max-width: 600px;
-    text-align: left; /* garante alinhamento à esquerda */
+    text-align: left;
 }
 
-/* Foto à direita com moldura */
 .sobre-foto img {
     width: 220px;
     height: 220px;
-    border-radius: 50%; /* deixa redonda */
-    border: 5px solid #00bcd4; /* moldura */
+    border-radius: 50%;
+    border: 5px solid #00bcd4;
     box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
     object-fit: cover;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efeito hover */
 .sobre-foto img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 30px rgba(0, 188, 212, 0.9);
 }
-
-
 
 /* ===== MAIN ===== */
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 80px;
-  padding: 60px 20px;
+  gap: 60px;
+  padding: 40px 20px;
 }
 
 section {
   max-width: 800px;
-  width: 80%;
+  width: 100%;
   text-align: center;
   background-color: #430c68;
-  padding: 40px;
+  padding: 30px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  opacity: 0; /* para animação JS */
+  opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease-out;
 }
 
 section h2 {
   margin-bottom: 20px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #00e0ff;
 }
 
 section ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 section ul li {
@@ -159,23 +140,21 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* ===== Habilidades com ícones ===== */
 #habilidades ul {
-  list-style: none; /* remove bolinhas */
-  padding: 0;
-  margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-  gap: 20px; /* espaçamento entre itens */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
 }
 
 #habilidades li {
   display: flex;
   align-items: center;
-  gap: 12px; /* espaço entre texto e imagem */
-  font-size: 18px;
-  color: #fff;
+  gap: 10px;
+  font-size: 16px;
   background: rgba(255, 255, 255, 0.05);
-  padding: 12px 16px;
+  padding: 10px 12px;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
@@ -186,9 +165,9 @@ a:hover {
 }
 
 #habilidades img {
-  width: 40px;   /* tamanho fixo */
-  height: 40px;
-  object-fit: contain; /* mantém proporção da logo */
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
 }
 
 /* ===== FOOTER ===== */
@@ -197,12 +176,26 @@ footer {
   background-color: #430c68;
   color: #fff;
   width: 100%;
-  max-width: 100vw;  /* força ocupar a tela toda */
-  padding: 5px 20px;
+  max-width: 100vw;
+  padding: 15px 20px;
 }
 
 /* ===== ANIMAÇÃO ===== */
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .sobre {
+      flex-direction: column;
+      text-align: center;
+  }
+  .sobre-texto {
+      text-align: center;
+  }
+  .sobre-foto {
+      margin-top: 20px;
+  }
 }
