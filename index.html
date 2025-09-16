@@ -5,8 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfólio de Tauã Bittencourt</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 </head>
 <body>
+    <!-- Vídeo de fundo -->
+    <video autoplay muted loop id="bg-video">
+        <source src="images/videobackground.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos em HTML5.
+    </video>
+
   <header>
     <h1>Tauã Bittencourt</h1>
     <nav class="navbar">
@@ -18,12 +25,20 @@
       </ul>
     </nav>
   </header>
-
   <main>
-    <section id="sobre" class="fade-in">
-      <h2>Sobre</h2>
-      <p>Olá, meu nome é Tauã Bittencourt e sou desenvolvedor web.</p>
-    </section>
+   <section id="sobre" class="fade-in sobre">
+  <div class="sobre-texto">
+    <h2>Sobre</h2>
+    <p>Olá, meu nome é Tauã Bittencourt, sou desenvolvedor web e bacharelando em Engenharia de Software. 
+       Apaixonado por tecnologia, estou sempre buscando aprender novas 
+       ferramentas e criar projetos criativos para mostrar minhas habilidades.</p>
+  </div>
+
+  <div class="sobre-foto">
+    <img src="images/minha-foto.jpg" alt="Foto de Tauã Bittencourt">
+  </div>
+</section>
+
 
     <section id="habilidades" class="fade-in">
       <h2>Habilidades</h2>
