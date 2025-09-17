@@ -9,19 +9,19 @@
   </head>
   <body>
     <!-- Vídeo de fundo -->
-    <video autoplay muted loop id="bg-video">
+    <video autoplay muted loop playsinline id="bg-video">
       <source src="images/videobackground.mp4" type="video/mp4" />
       Seu navegador não suporta vídeos em HTML5.
     </video>
 
     <header>
-      <h1 class="logo">Tauã Bittencourt</h1>
+      <h1>Tauã Bittencourt</h1>
+      <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <nav class="navbar">
-        <div class="menu-toggle" id="mobile-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
         <ul class="nav-list">
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#habilidades">Habilidades</a></li>
@@ -37,13 +37,10 @@
           <h2>Sobre</h2>
           <p>
             Olá! Sou Tauã Bittencourt, desenvolvedor web e bacharelando em
-            Engenharia de Software. Apaixonado por tecnologia, venho expandindo
-            meus conhecimentos na área, inspirado por familiares que atuam como
-            engenheiros e desenvolvedores. Busco criar soluções inovadoras e
-            contribuir com o futuro da tecnologia.
+            Engenharia de Software. Apaixonado por tecnologia, busco criar
+            soluções inovadoras e contribuir com o futuro da tecnologia.
           </p>
         </div>
-
         <div class="sobre-foto">
           <img src="images/minha-foto.jpg" alt="Foto de Tauã Bittencourt" />
         </div>
@@ -51,24 +48,14 @@
 
       <section id="habilidades" class="fade-in">
         <h2>Habilidades</h2>
-        <ul class="habilidades-lista">
-          <li><span>HTML</span><img src="images/html.png" alt="HTML" /></li>
-          <li><span>CSS</span><img src="images/css.png" alt="CSS" /></li>
-          <li>
-            <span>JavaScript</span
-            ><img src="images/javascript.png" alt="JavaScript" />
-          </li>
-          <li>
-            <span>Node.js</span><img src="images/nodejs.png" alt="Node.js" />
-          </li>
-          <li>
-            <span>Tailwind</span
-            ><img src="images/tailwind.png" alt="Tailwind" />
-          </li>
-          <li>
-            <span>GitHub</span><img src="images/github.png" alt="GitHub" />
-          </li>
-          <li><span>Git</span><img src="images/git.png" alt="Git" /></li>
+        <ul>
+          <li>HTML <img src="images/html.png" alt="HTML" /></li>
+          <li>CSS <img src="images/css.png" alt="CSS" /></li>
+          <li>JavaScript <img src="images/javascript.png" alt="JS" /></li>
+          <li>Node.js <img src="images/nodejs.png" alt="Node.js" /></li>
+          <li>Tailwind <img src="images/tailwind.png" alt="Tailwind" /></li>
+          <li>GitHub <img src="images/github.png" alt="GitHub" /></li>
+          <li>Git <img src="images/git.png" alt="Git" /></li>
         </ul>
       </section>
 

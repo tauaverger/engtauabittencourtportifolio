@@ -8,9 +8,7 @@
 html, body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden; /* remove rolagem horizontal */
-  margin: 0;
-  padding: 0;
+  overflow-x: hidden;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
   line-height: 1.6;
@@ -18,13 +16,13 @@ html, body {
 
 /* Vídeo em background */
 #bg-video {
-    position: fixed;      /* fixo no fundo */
-    top: 0;
-    left: 0;
-    width: 100vw;         /* ocupa toda a largura da tela */
-    height: 100vh;        /* ocupa toda a altura da tela */
-    object-fit: cover;    /* cobre a tela sem distorcer */
-    z-index: -1;          /* atrás de todo o conteúdo */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
 }
 
 /* ===== HEADER ===== */
@@ -43,57 +41,78 @@ header {
 
 header h1 {
   font-size: 1.6rem;
+  white-space: nowrap;
 }
 
-.navbar ul {
+/* Navbar desktop */
+.navbar {
+  position: relative;
+}
+
+.nav-list {
   list-style: none;
   display: flex;
   gap: 20px;
-  flex-wrap: wrap; /* ajusta no mobile */
 }
 
-.navbar a {
+.nav-list li a {
   text-decoration: none;
   color: #fff;
   font-weight: 500;
   transition: color 0.3s;
 }
 
-.navbar a:hover {
+.nav-list li a:hover {
   color: #00e0ff;
+}
+
+/* Menu hambúrguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: auto; /* empurra o menu para a direita */
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 2px;
 }
 
 /* ===== Section Sobre ===== */
 .sobre {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 40px 10%;
-    background-color: #430c68;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 10%;
+  background-color: #430c68;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 .sobre-texto {
-    flex: 1;
-    max-width: 600px;
-    text-align: left;
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
 }
 
 .sobre-foto img {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    border: 5px solid #00bcd4;
-    box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
-    object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 5px solid #00bcd4;
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sobre-foto img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(0, 188, 212, 0.9);
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 188, 212, 0.9);
 }
 
 /* ===== MAIN ===== */
@@ -143,20 +162,22 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===== Habilidades com ícones ===== */
+/* ===== Habilidades - versão padrão (mobile/vertical) ===== */
 #habilidades ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
 #habilidades li {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  font-size: 16px;
+  width: 150px;
+  font-size: 11px;
   background: rgba(255, 255, 255, 0.05);
-  padding: 10px 12px;
+  padding: 5px 12px;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
@@ -188,16 +209,51 @@ footer {
   transform: translateY(0);
 }
 
-/* ===== RESPONSIVO ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .sobre {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
   .sobre-texto {
-      text-align: center;
+    text-align: center;
   }
   .sobre-foto {
-      margin-top: 20px;
+    margin-top: 20px;
+  }
+
+  /* Navbar mobile */
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #521088;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 769px) {
+  #habilidades ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-items: center;
+  }
+
+  #habilidades li {
+    width: 120px;
   }
 }

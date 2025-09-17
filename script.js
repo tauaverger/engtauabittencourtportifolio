@@ -13,9 +13,9 @@ sections.forEach(section => {
   observer.observe(section);
 });
 
-const menuToggle = document.getElementById('mobile-menu');
+const mobileMenu = document.getElementById('mobile-menu');
 const navList = document.querySelector('.nav-list');
 
-menuToggle.addEventListener('click', () => {
+mobileMenu.addEventListener('click', () => {
   navList.classList.toggle('active');
 });
